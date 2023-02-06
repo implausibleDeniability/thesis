@@ -1,6 +1,6 @@
 from api import Api
 from bfs import Bfs
-from bfs_loader import BfsBuilder
+from bfs_builder import BfsBuilder
 from mongo_driver import MongoDriver
 
 
