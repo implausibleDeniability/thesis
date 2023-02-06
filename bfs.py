@@ -1,7 +1,7 @@
-from typing import Callable
+from typing import Callable, Iterable
 
 
-class BfsId:
+class Bfs:
     visited = set()
     queue = []
 
