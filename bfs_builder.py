@@ -12,7 +12,7 @@ class BfsBuilder:
     def build(self, get_neighbors: Callable) -> Bfs:
         queue, visited = self.load_state_from_mongo()
         bfs = Bfs(self.MY_ID, get_neighbors)
-        if len(visited) == 0:
+        if len(visited) != 0:
             bfs.load_state(queue, visited)
         return bfs
 
