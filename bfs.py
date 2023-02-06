@@ -10,6 +10,10 @@ class Bfs:
         self.visited.add(id)
         self.get_neighbors = get_neighbors
 
+    def load_state(self, queue: Iterable[int], visited: Iterable[int]) -> None:
+        self.queue = list(set(queue).difference(set(visited)))
+        self.visited = set(visited)
+
     def next(self) -> (int, list[int]):
         id = self.queue.pop(0)
         neighbouring_ids = self.get_neighbors(id)
