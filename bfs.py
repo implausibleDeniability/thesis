@@ -7,6 +7,7 @@ class BfsId:
 
     def __init__(self, id: int, get_neighbors: Callable):
         self.queue.append(id)
+        self.visited.add(id)
         self.get_neighbors = get_neighbors
 
     def next(self) -> (int, list[int]):
@@ -18,3 +19,4 @@ class BfsId:
     def _update_queue_with_new_nodes(self, nodes: list[int]):
         new_ids = set(nodes) - self.visited
         self.queue.extend(list(new_ids))
+        self.visited.update(new_ids)
