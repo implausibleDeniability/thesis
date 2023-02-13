@@ -1,6 +1,6 @@
-from bfs_builder import BfsBuilder
-from mongo_driver import MongoDriver
-from user_friends_request import FriendsRequester
+from src.bfs_builder import BfsBuilder
+from src.mongo_driver import MongoDriver
+from src.requests.friends_requester import FriendsRequester
 
 
 if __name__ == "__main__":

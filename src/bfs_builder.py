@@ -1,6 +1,6 @@
 from typing import Callable, Iterable
-from bfs import Bfs
-from mongo_driver import MongoDriver
+from src.bfs import Bfs
+from src.mongo_driver import MongoDriver
 
 
 class BfsBuilder:

@@ -1,7 +1,7 @@
 import json
 import requests
 
-from rps_limiter import RpsLimiter
+from src.requests.rps_limiter import RpsLimiter
 
 
 class InfoRequester:

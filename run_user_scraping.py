@@ -1,5 +1,5 @@
-from user_info_request import InfoRequester
-from mongo_driver import MongoDriver
+from src.requests.info_requester import InfoRequester
+from src.mongo_driver import MongoDriver
 
 REQUEST_BATCH_SIZE = 100
 FIELDS = ['sex', 'bdate', 'city', 'country', 'university', 'faculty', 'graduation', 'personal']
