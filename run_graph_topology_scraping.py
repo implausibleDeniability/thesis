@@ -1,12 +1,11 @@
-from api import Api
-from bfs import Bfs
 from bfs_builder import BfsBuilder
 from mongo_driver import MongoDriver
+from user_friends_request import FriendsRequester
 
 
 if __name__ == "__main__":
-    api = Api()
-    get_neighbors = api.get_friends
+    friends_requester = FriendsRequester()
+    get_neighbors = friends_requester.get_friends
     mongo_driver = MongoDriver('topology')
 #     my_id = 395182538
 #     bfs = Bfs(my_id, get_neighbors)
