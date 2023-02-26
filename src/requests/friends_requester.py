@@ -1,6 +1,7 @@
 import json
 import requests
 
+from src.requests.exceptions import RateLimitError
 from src.requests.rps_limiter import RpsLimiter
 
 
@@ -26,6 +27,8 @@ class FriendsRequester:
                 return [] # deleted profile
             elif response['error']['error_code'] == 30:
                 return [] # private profile
+            elif response['error']['error_code'] == 29:
+                raise RateLimitError()
             else:
                 print(response)
         else:
