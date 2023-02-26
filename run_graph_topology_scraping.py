@@ -11,9 +11,9 @@ if __name__ == "__main__":
     mongo_driver = MongoDriver('topology')
     bfs = BfsBuilder(mongo_driver).build(get_neighbors)
     while True:
-#         try:
-        user, friends = bfs.next()
-        mongo_driver.insert({"_id": user, "friends": friends})
-#        except RateLimitError:
-#            time.sleep(3600 * 8)
+        try:
+            user, friends = bfs.next()
+            mongo_driver.insert({"_id": user, "friends": friends})
+        except RateLimitError:
+            time.sleep(3600 * 8)
 
