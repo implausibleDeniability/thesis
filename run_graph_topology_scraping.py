@@ -1,4 +1,4 @@
-from time import time
+import time
 from src.bfs_builder import BfsBuilder
 from src.mongo_driver import MongoDriver
 from src.requests.exceptions import RateLimitError
