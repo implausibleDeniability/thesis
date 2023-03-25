@@ -1,6 +1,6 @@
 import time
 from src.bfs_builder import BfsBuilder
-from src.mongo_driver import MongoDriver
+from src.mongo.driver import MongoDriver
 from src.requests.exceptions import RateLimitError
 from src.requests.friends_requester import FriendsRequester
 
