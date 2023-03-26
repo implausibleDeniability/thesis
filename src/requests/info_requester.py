@@ -30,7 +30,7 @@ class InfoRequester:
             "user_id": ",".join(list(map(str, user_ids))),
             "access_token": self.access_token,
             "v": "5.131",
-            "fields": "sex,bdate,city,country,university,faculty,graduation,personal",
+            "fields": ", ".join(fields),
         }
         response = requests.get(self.url, params=params)
         data = response.json()['response']
