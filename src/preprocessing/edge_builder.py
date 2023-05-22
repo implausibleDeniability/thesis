@@ -8,6 +8,8 @@ class EdgeBuilder:
     def build(self, topology: dict) -> np.ndarray:
         edges = []
         for user in tqdm(topology):
+            if user['_id'] not in self.public_user_id_to_research_id:
+                continue
             user_local_id = self.public_user_id_to_research_id[user['_id']]
             for friend_public_id in user['friends']:
                 if friend_public_id not in self.public_user_id_to_research_id:
