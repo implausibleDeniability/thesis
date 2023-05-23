@@ -26,6 +26,6 @@ class UserFeaturizer:
         df = pd.DataFrame(users)
         numerical_features = np.array(df[self.numerical_feature_names].values, dtype=np.float32)
         categorical_features = np.array(df[self.categorical_feature_names].values, dtype=np.int32)
-        categorical_features[categorical_features > 10] = 0
+        categorical_features[np.bitwise_or(categorical_features > 10, categorical_features < 0)] = 0
         features = namedtuple('features', ['numerical', 'categorical'])
         return features(numerical_features, categorical_features)
