@@ -22,8 +22,10 @@ class UserFeaturizer:
     
     max_categories=10
     
-    def build_feature_matrix(self, users: list[dict]):
+    def build_feature_matrix(self, users: list[dict], user_id_to_ordered_id: dict[int, int]):
         df = pd.DataFrame(users)
+        df['ordered_id'] = df['id'].apply(lambda user_id: user_id_to_ordered_id[user_id])
+        df = df.sort_values(by='ordered_id')
         numerical_features = np.array(df[self.numerical_feature_names].values, dtype=np.float32)
         categorical_features = np.array(df[self.categorical_feature_names].values, dtype=np.int32)
         categorical_features[np.bitwise_or(categorical_features > 10, categorical_features < 0)] = 0

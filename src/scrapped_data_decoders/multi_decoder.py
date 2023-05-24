@@ -31,5 +31,6 @@ class MultiDecoder(Decoder):
         decoded_dict = dict()
         for decoder in self.decoders:
             decoded_dict.update(decoder.decode(user_dict))
+        decoded_dict['id'] = user_dict['_id']
         return decoded_dict
 
