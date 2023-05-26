@@ -1,4 +1,7 @@
+from __future__ import annotations
 from enum import Enum
+
+
 class ConvType(Enum):
     gcn = 1
     gat = 2
