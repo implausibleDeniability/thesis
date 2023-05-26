@@ -3,7 +3,9 @@ from torch.nn import ReLU, Dropout, Embedding
 from torch_geometric.nn import MLP, Sequential, BatchNorm
 from torch_geometric.nn.conv import GCNConv, ResGatedGraphConv, GATConv, GINConv
 
-class NN(torch.nn.Module):
+from src.gnn.conv_type import ConvType
+
+class GNN(torch.nn.Module):
     def __init__(
         self,
         input_dim: int,
