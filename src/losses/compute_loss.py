@@ -11,7 +11,7 @@ def compute_loss(y_true: torch.Tensor, y_pred: torch.Tensor, loss_type: Metrics)
             positive_coefficients = (y_true > 0.5) / positive_to_negative_ratio
             negative_coefficients = (y_true < 0.5) #* positive_to_negative_ratio
             coefficients = positive_coefficients + negative_coefficients
-        elif loss_type == Metrics.balanced_accuracy:
+        elif loss_type in [Metrics.balanced_accuracy, Metrics.map_at_k]:
             positive_to_negative_ratio = y_true.mean() / (1 - y_true.mean())
             positive_coefficients = (y_true > 0.5) / positive_to_negative_ratio
             negative_coefficients = (y_true < 0.5) #* positive_to_negative_ratio
